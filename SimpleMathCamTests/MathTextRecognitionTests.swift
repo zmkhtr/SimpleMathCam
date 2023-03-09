@@ -8,7 +8,7 @@
 import XCTest
 @testable import SimpleMathCam
 
-class MathTextRecognition {
+class MathTextRecognizer {
     typealias Result = Swift.Result<String, Error>
 
     private let recognizer: MyTextRecognizer
@@ -21,13 +21,14 @@ class MathTextRecognition {
         self.recognizer = recognizer
     }
     
-    func extract(image: UIImage, completion: @escaping (MathTextRecognition.Result) -> Void) {
-        recognizer.process(image: image) { result in
+    func extract(image: UIImage, completion: @escaping (MathTextRecognizer.Result) -> Void) {
+        recognizer.process(image: image) { [weak self] result in
+            guard self != nil else { return }
             switch result {
+            case let .success(mathText):
+                completion(.success(mathText))
             case .failure:
                 completion(.failure(Error.invalidData))
-            default:
-                break
             }
         }
     }
@@ -49,6 +50,10 @@ class MyTextRecognizer {
     
     func complete(with error: Error, at index: Int = 0) {
         messages[index].completion(.failure(error))
+    }
+    
+    func complete(with mathText: String, at index: Int = 0) {
+        messages[index].completion(.success(mathText))
     }
 }
 
@@ -82,30 +87,53 @@ class MathTextRecognitionTests: XCTestCase {
     func test_extract_deliversErrorOnTextRecognitionError() {
         let (sut, recognizer) = makeSUT()
         
-        let exp = expectation(description: "Wait for load completion")
-        sut.extract(image: anyImage()) { result in
-            switch result {
-            case let .failure(error):
-                XCTAssertEqual(error, .invalidData)
-            default:
-                break
-            }
-            exp.fulfill()
+        expect(sut, with: anyImage(), toCompleteWith: .failure(.invalidData)) {
+            let recognizerError = NSError(domain: "Recognizer Error", code: 0)
+            recognizer.complete(with: recognizerError)
         }
         
-        let recognizerError = NSError(domain: "Recognizer Error", code: 0)
-        recognizer.complete(with: recognizerError)
-        wait(for: [exp], timeout: 1.0)
     }
     
-    func makeSUT(file: StaticString = #filePath, line: UInt = #line) -> (sut: MathTextRecognition, recognizer: MyTextRecognizer) {
+    func test_extract_deliversStringOnTextRecognitionSuccess() {
+        let (sut, recognizer) = makeSUT()
+        let expected = "2+3"
+        
+        expect(sut, with: anyImage(), toCompleteWith: .success(expected)) {
+            recognizer.complete(with: expected)
+        }
+    }
+    
+    
+    func makeSUT(file: StaticString = #filePath, line: UInt = #line) -> (sut: MathTextRecognizer, recognizer: MyTextRecognizer) {
         let recognizer = MyTextRecognizer()
-        let sut = MathTextRecognition(recognizer: recognizer)
+        let sut = MathTextRecognizer(recognizer: recognizer)
         
         trackForMemoryLeaks(recognizer, file: file, line: line)
         trackForMemoryLeaks(sut, file: file, line: line)
         
         return (sut, recognizer)
+    }
+    
+    
+    private func expect(_ sut: MathTextRecognizer, with image: UIImage, toCompleteWith expectedResult: MathTextRecognizer.Result, when action: () -> Void, file: StaticString = #filePath, line: UInt = #line){
+        
+        let exp = expectation(description: "Wait for load completion")
+        sut.extract(image: image) { receivedResult in
+            switch (receivedResult, expectedResult) {
+            case let (.success(receivedItems), .success(expectedItems)):
+                XCTAssertEqual(receivedItems, expectedItems, file: file, line: line)
+            case let (.failure(receivedError), .failure(expectedError)):
+                XCTAssertEqual(receivedError, expectedError, file: file, line: line)
+            default:
+                XCTFail("Expected result \(expectedResult) got \(receivedResult) instead", file: file, line: line)
+            }
+            
+            exp.fulfill()
+        }
+        
+        action()
+        
+        wait(for: [exp], timeout: 1.0)
     }
     
     private func anyImage() -> UIImage {
