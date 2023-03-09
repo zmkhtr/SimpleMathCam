@@ -34,8 +34,13 @@ class MathTextRecognizer {
     }
 }
 
-class MyTextRecognizer {
+protocol MyTextRecognizer {
     typealias Result = Swift.Result<String, Error>
+    
+    func process(image: UIImage, completion: @escaping (MyTextRecognizer.Result) -> Void)
+}
+
+class MyTextRecognizerSpy: MyTextRecognizer {
     
     private var messages = [(image: UIImage, completion: (MyTextRecognizer.Result) -> Void)]()
 
@@ -104,7 +109,7 @@ class MathTextRecognitionTests: XCTestCase {
     }
     
     func test_load_doesNotDeliverResultAfterSUTInstanceHasBeenDeallocated() {
-        let recognizer = MyTextRecognizer()
+        let recognizer = MyTextRecognizerSpy()
         var sut: MathTextRecognizer? = MathTextRecognizer(recognizer: recognizer)
 
         var capturedResults = [MathTextRecognizer.Result]()
@@ -116,8 +121,8 @@ class MathTextRecognitionTests: XCTestCase {
         XCTAssertTrue(capturedResults.isEmpty)
     }
     
-    func makeSUT(file: StaticString = #filePath, line: UInt = #line) -> (sut: MathTextRecognizer, recognizer: MyTextRecognizer) {
-        let recognizer = MyTextRecognizer()
+    func makeSUT(file: StaticString = #filePath, line: UInt = #line) -> (sut: MathTextRecognizer, recognizer: MyTextRecognizerSpy) {
+        let recognizer = MyTextRecognizerSpy()
         let sut = MathTextRecognizer(recognizer: recognizer)
         
         trackForMemoryLeaks(recognizer, file: file, line: line)
