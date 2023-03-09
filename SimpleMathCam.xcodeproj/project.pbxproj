@@ -16,6 +16,9 @@
 		2024A03929BA17A7003DFC11 /* SimpleMathCamTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2024A03829BA17A7003DFC11 /* SimpleMathCamTests.swift */; };
 		2024A04329BA17A7003DFC11 /* SimpleMathCamUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2024A04229BA17A7003DFC11 /* SimpleMathCamUITests.swift */; };
 		2024A04529BA17A7003DFC11 /* SimpleMathCamUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2024A04429BA17A7003DFC11 /* SimpleMathCamUITestsLaunchTests.swift */; };
+		273C7047DEE8015055DE2878 /* Pods_SimpleMathCamTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E53BDBE69E2E430A7B08FDB2 /* Pods_SimpleMathCamTests.framework */; };
+		8B158322539D3767965CF0D9 /* Pods_SimpleMathCam.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81EAD65A5AAC818DFBB716FD /* Pods_SimpleMathCam.framework */; };
+		E50BEC999BD8132C42D0B76C /* Pods_SimpleMathCam_SimpleMathCamUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5392084A4E3883581C553F2A /* Pods_SimpleMathCam_SimpleMathCamUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1BD179B1D36EC860C6FC0E53 /* Pods-SimpleMathCamTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleMathCamTests.debug.xcconfig"; path = "Target Support Files/Pods-SimpleMathCamTests/Pods-SimpleMathCamTests.debug.xcconfig"; sourceTree = "<group>"; };
+		1F5D5587B955469852F17BD9 /* Pods-SimpleMathCam.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleMathCam.release.xcconfig"; path = "Target Support Files/Pods-SimpleMathCam/Pods-SimpleMathCam.release.xcconfig"; sourceTree = "<group>"; };
 		2024A01E29BA17A4003DFC11 /* SimpleMathCam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleMathCam.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2024A02129BA17A4003DFC11 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2024A02329BA17A4003DFC11 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +54,13 @@
 		2024A03E29BA17A7003DFC11 /* SimpleMathCamUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SimpleMathCamUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2024A04229BA17A7003DFC11 /* SimpleMathCamUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleMathCamUITests.swift; sourceTree = "<group>"; };
 		2024A04429BA17A7003DFC11 /* SimpleMathCamUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleMathCamUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		3B4B2DAE1D0C4206F31C4C5D /* Pods-SimpleMathCam-SimpleMathCamUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleMathCam-SimpleMathCamUITests.debug.xcconfig"; path = "Target Support Files/Pods-SimpleMathCam-SimpleMathCamUITests/Pods-SimpleMathCam-SimpleMathCamUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		5392084A4E3883581C553F2A /* Pods_SimpleMathCam_SimpleMathCamUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SimpleMathCam_SimpleMathCamUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		81EAD65A5AAC818DFBB716FD /* Pods_SimpleMathCam.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SimpleMathCam.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		979BD6CBABD3F10FEBB392F1 /* Pods-SimpleMathCam-SimpleMathCamUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleMathCam-SimpleMathCamUITests.release.xcconfig"; path = "Target Support Files/Pods-SimpleMathCam-SimpleMathCamUITests/Pods-SimpleMathCam-SimpleMathCamUITests.release.xcconfig"; sourceTree = "<group>"; };
+		E53BDBE69E2E430A7B08FDB2 /* Pods_SimpleMathCamTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SimpleMathCamTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F03BA6F6F8AC79DE0C1AA5A9 /* Pods-SimpleMathCam.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleMathCam.debug.xcconfig"; path = "Target Support Files/Pods-SimpleMathCam/Pods-SimpleMathCam.debug.xcconfig"; sourceTree = "<group>"; };
+		F32B1D204F8E30EA0B73075C /* Pods-SimpleMathCamTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleMathCamTests.release.xcconfig"; path = "Target Support Files/Pods-SimpleMathCamTests/Pods-SimpleMathCamTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B158322539D3767965CF0D9 /* Pods_SimpleMathCam.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				273C7047DEE8015055DE2878 /* Pods_SimpleMathCamTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E50BEC999BD8132C42D0B76C /* Pods_SimpleMathCam_SimpleMathCamUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +98,8 @@
 				2024A03729BA17A7003DFC11 /* SimpleMathCamTests */,
 				2024A04129BA17A7003DFC11 /* SimpleMathCamUITests */,
 				2024A01F29BA17A4003DFC11 /* Products */,
+				3F37EC929F4C3790AA648969 /* Pods */,
+				4B6F28BE9F2D1876EAA1990A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -127,6 +144,30 @@
 			path = SimpleMathCamUITests;
 			sourceTree = "<group>";
 		};
+		3F37EC929F4C3790AA648969 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F03BA6F6F8AC79DE0C1AA5A9 /* Pods-SimpleMathCam.debug.xcconfig */,
+				1F5D5587B955469852F17BD9 /* Pods-SimpleMathCam.release.xcconfig */,
+				3B4B2DAE1D0C4206F31C4C5D /* Pods-SimpleMathCam-SimpleMathCamUITests.debug.xcconfig */,
+				979BD6CBABD3F10FEBB392F1 /* Pods-SimpleMathCam-SimpleMathCamUITests.release.xcconfig */,
+				1BD179B1D36EC860C6FC0E53 /* Pods-SimpleMathCamTests.debug.xcconfig */,
+				F32B1D204F8E30EA0B73075C /* Pods-SimpleMathCamTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		4B6F28BE9F2D1876EAA1990A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				81EAD65A5AAC818DFBB716FD /* Pods_SimpleMathCam.framework */,
+				5392084A4E3883581C553F2A /* Pods_SimpleMathCam_SimpleMathCamUITests.framework */,
+				E53BDBE69E2E430A7B08FDB2 /* Pods_SimpleMathCamTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -134,9 +175,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2024A04829BA17A7003DFC11 /* Build configuration list for PBXNativeTarget "SimpleMathCam" */;
 			buildPhases = (
+				535342396B6738C9DA75ADAC /* [CP] Check Pods Manifest.lock */,
 				2024A01A29BA17A4003DFC11 /* Sources */,
 				2024A01B29BA17A4003DFC11 /* Frameworks */,
 				2024A01C29BA17A4003DFC11 /* Resources */,
+				63E985D6E251732EE2E22DB0 /* [CP] Embed Pods Frameworks */,
+				6FD96DAB819E8DDEFBD4D5A0 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -151,6 +195,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2024A04B29BA17A7003DFC11 /* Build configuration list for PBXNativeTarget "SimpleMathCamTests" */;
 			buildPhases = (
+				B762C19410D49DAD6CC6B6E1 /* [CP] Check Pods Manifest.lock */,
 				2024A03029BA17A7003DFC11 /* Sources */,
 				2024A03129BA17A7003DFC11 /* Frameworks */,
 				2024A03229BA17A7003DFC11 /* Resources */,
@@ -169,9 +214,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2024A04E29BA17A7003DFC11 /* Build configuration list for PBXNativeTarget "SimpleMathCamUITests" */;
 			buildPhases = (
+				72A8EADDF63C58517ADAA53E /* [CP] Check Pods Manifest.lock */,
 				2024A03A29BA17A7003DFC11 /* Sources */,
 				2024A03B29BA17A7003DFC11 /* Frameworks */,
 				2024A03C29BA17A7003DFC11 /* Resources */,
+				F5E4259380390651FD6727D0 /* [CP] Embed Pods Frameworks */,
+				4C8BD70CABACCC489709D90F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -252,6 +300,143 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4C8BD70CABACCC489709D90F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SimpleMathCam-SimpleMathCamUITests/Pods-SimpleMathCam-SimpleMathCamUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SimpleMathCam-SimpleMathCamUITests/Pods-SimpleMathCam-SimpleMathCamUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SimpleMathCam-SimpleMathCamUITests/Pods-SimpleMathCam-SimpleMathCamUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		535342396B6738C9DA75ADAC /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SimpleMathCam-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		63E985D6E251732EE2E22DB0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SimpleMathCam/Pods-SimpleMathCam-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SimpleMathCam/Pods-SimpleMathCam-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SimpleMathCam/Pods-SimpleMathCam-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6FD96DAB819E8DDEFBD4D5A0 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SimpleMathCam/Pods-SimpleMathCam-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SimpleMathCam/Pods-SimpleMathCam-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SimpleMathCam/Pods-SimpleMathCam-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		72A8EADDF63C58517ADAA53E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SimpleMathCam-SimpleMathCamUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B762C19410D49DAD6CC6B6E1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SimpleMathCamTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F5E4259380390651FD6727D0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SimpleMathCam-SimpleMathCamUITests/Pods-SimpleMathCam-SimpleMathCamUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SimpleMathCam-SimpleMathCamUITests/Pods-SimpleMathCam-SimpleMathCamUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SimpleMathCam-SimpleMathCamUITests/Pods-SimpleMathCam-SimpleMathCamUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		2024A01A29BA17A4003DFC11 /* Sources */ = {
@@ -432,6 +617,7 @@
 		};
 		2024A04929BA17A7003DFC11 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F03BA6F6F8AC79DE0C1AA5A9 /* Pods-SimpleMathCam.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -460,6 +646,7 @@
 		};
 		2024A04A29BA17A7003DFC11 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1F5D5587B955469852F17BD9 /* Pods-SimpleMathCam.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -488,6 +675,7 @@
 		};
 		2024A04C29BA17A7003DFC11 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1BD179B1D36EC860C6FC0E53 /* Pods-SimpleMathCamTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -508,6 +696,7 @@
 		};
 		2024A04D29BA17A7003DFC11 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F32B1D204F8E30EA0B73075C /* Pods-SimpleMathCamTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -528,6 +717,7 @@
 		};
 		2024A04F29BA17A7003DFC11 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3B4B2DAE1D0C4206F31C4C5D /* Pods-SimpleMathCam-SimpleMathCamUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -546,6 +736,7 @@
 		};
 		2024A05029BA17A7003DFC11 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 979BD6CBABD3F10FEBB392F1 /* Pods-SimpleMathCam-SimpleMathCamUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
