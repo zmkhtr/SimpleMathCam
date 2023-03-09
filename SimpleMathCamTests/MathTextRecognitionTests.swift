@@ -103,6 +103,18 @@ class MathTextRecognitionTests: XCTestCase {
         }
     }
     
+    func test_load_doesNotDeliverResultAfterSUTInstanceHasBeenDeallocated() {
+        let recognizer = MyTextRecognizer()
+        var sut: MathTextRecognizer? = MathTextRecognizer(recognizer: recognizer)
+
+        var capturedResults = [MathTextRecognizer.Result]()
+        sut?.extract(image: anyImage()) { capturedResults.append($0) }
+
+        sut = nil
+        recognizer.complete(with: "2+3")
+
+        XCTAssertTrue(capturedResults.isEmpty)
+    }
     
     func makeSUT(file: StaticString = #filePath, line: UInt = #line) -> (sut: MathTextRecognizer, recognizer: MyTextRecognizer) {
         let recognizer = MyTextRecognizer()
