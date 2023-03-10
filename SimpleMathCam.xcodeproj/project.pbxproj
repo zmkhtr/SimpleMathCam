@@ -18,6 +18,10 @@
 		2024A04529BA17A7003DFC11 /* SimpleMathCamUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2024A04429BA17A7003DFC11 /* SimpleMathCamUITestsLaunchTests.swift */; };
 		2024A05529BA37B4003DFC11 /* MyTextRecognizerSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2024A05429BA37B4003DFC11 /* MyTextRecognizerSpy.swift */; };
 		2024A05829BA380E003DFC11 /* MyTextRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2024A05729BA380E003DFC11 /* MyTextRecognizer.swift */; };
+		20E75B1829BAB81400861BB5 /* MyMathTextExtractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E75B1729BAB81400861BB5 /* MyMathTextExtractor.swift */; };
+		20E75B1A29BAB82F00861BB5 /* MathItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E75B1929BAB82F00861BB5 /* MathItem.swift */; };
+		20E75B1C29BAB84500861BB5 /* MathTextExtractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E75B1B29BAB84500861BB5 /* MathTextExtractor.swift */; };
+		20E75B1E29BAB86200861BB5 /* MathItemMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E75B1D29BAB86200861BB5 /* MathItemMapper.swift */; };
 		273C7047DEE8015055DE2878 /* Pods_SimpleMathCamTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E53BDBE69E2E430A7B08FDB2 /* Pods_SimpleMathCamTests.framework */; };
 		8B158322539D3767965CF0D9 /* Pods_SimpleMathCam.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81EAD65A5AAC818DFBB716FD /* Pods_SimpleMathCam.framework */; };
 		E50BEC999BD8132C42D0B76C /* Pods_SimpleMathCam_SimpleMathCamUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5392084A4E3883581C553F2A /* Pods_SimpleMathCam_SimpleMathCamUITests.framework */; };
@@ -58,6 +62,10 @@
 		2024A04429BA17A7003DFC11 /* SimpleMathCamUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleMathCamUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		2024A05429BA37B4003DFC11 /* MyTextRecognizerSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTextRecognizerSpy.swift; sourceTree = "<group>"; };
 		2024A05729BA380E003DFC11 /* MyTextRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTextRecognizer.swift; sourceTree = "<group>"; };
+		20E75B1729BAB81400861BB5 /* MyMathTextExtractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMathTextExtractor.swift; sourceTree = "<group>"; };
+		20E75B1929BAB82F00861BB5 /* MathItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathItem.swift; sourceTree = "<group>"; };
+		20E75B1B29BAB84500861BB5 /* MathTextExtractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathTextExtractor.swift; sourceTree = "<group>"; };
+		20E75B1D29BAB86200861BB5 /* MathItemMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathItemMapper.swift; sourceTree = "<group>"; };
 		3B4B2DAE1D0C4206F31C4C5D /* Pods-SimpleMathCam-SimpleMathCamUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleMathCam-SimpleMathCamUITests.debug.xcconfig"; path = "Target Support Files/Pods-SimpleMathCam-SimpleMathCamUITests/Pods-SimpleMathCam-SimpleMathCamUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		5392084A4E3883581C553F2A /* Pods_SimpleMathCam_SimpleMathCamUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SimpleMathCam_SimpleMathCamUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		81EAD65A5AAC818DFBB716FD /* Pods_SimpleMathCam.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SimpleMathCam.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -120,7 +128,7 @@
 		2024A02029BA17A4003DFC11 /* SimpleMathCam */ = {
 			isa = PBXGroup;
 			children = (
-				2024A05929BA385E003DFC11 /* MathTextRecoginerModule */,
+				2024A05929BA385E003DFC11 /* MathTextExtractorModule */,
 				2024A05629BA37FB003DFC11 /* TextRecognizerModule */,
 				2024A02129BA17A4003DFC11 /* AppDelegate.swift */,
 				2024A02329BA17A4003DFC11 /* SceneDelegate.swift */,
@@ -159,11 +167,15 @@
 			path = TextRecognizerModule;
 			sourceTree = "<group>";
 		};
-		2024A05929BA385E003DFC11 /* MathTextRecoginerModule */ = {
+		2024A05929BA385E003DFC11 /* MathTextExtractorModule */ = {
 			isa = PBXGroup;
 			children = (
+				20E75B1729BAB81400861BB5 /* MyMathTextExtractor.swift */,
+				20E75B1929BAB82F00861BB5 /* MathItem.swift */,
+				20E75B1B29BAB84500861BB5 /* MathTextExtractor.swift */,
+				20E75B1D29BAB86200861BB5 /* MathItemMapper.swift */,
 			);
-			path = MathTextRecoginerModule;
+			path = MathTextExtractorModule;
 			sourceTree = "<group>";
 		};
 		3F37EC929F4C3790AA648969 /* Pods */ = {
@@ -464,8 +476,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20E75B1A29BAB82F00861BB5 /* MathItem.swift in Sources */,
+				20E75B1829BAB81400861BB5 /* MyMathTextExtractor.swift in Sources */,
 				2024A05829BA380E003DFC11 /* MyTextRecognizer.swift in Sources */,
 				2024A02629BA17A4003DFC11 /* MainViewController.swift in Sources */,
+				20E75B1C29BAB84500861BB5 /* MathTextExtractor.swift in Sources */,
+				20E75B1E29BAB86200861BB5 /* MathItemMapper.swift in Sources */,
 				2024A02229BA17A4003DFC11 /* AppDelegate.swift in Sources */,
 				2024A02429BA17A4003DFC11 /* SceneDelegate.swift in Sources */,
 			);
