@@ -5,8 +5,8 @@
 //  Created by Azam Mukhtar on 09/03/23.
 //
 
-import Foundation
 import UIKit
+import SimpleMathCam
 
 class MyTextRecognizerSpy: MyTextRecognizer {
     
@@ -25,7 +25,7 @@ class MyTextRecognizerSpy: MyTextRecognizer {
         messages[index].completion(.failure(error))
     }
     
-    func complete(with mathText: String, at index: Int = 0) {
-        messages[index].completion(.success(mathText))
+    func complete(with text: String, at index: Int = 0) {
+        messages[index].completion(.success(text))
     }
 }
