@@ -17,6 +17,7 @@
 		2024A04329BA17A7003DFC11 /* SimpleMathCamUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2024A04229BA17A7003DFC11 /* SimpleMathCamUITests.swift */; };
 		2024A04529BA17A7003DFC11 /* SimpleMathCamUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2024A04429BA17A7003DFC11 /* SimpleMathCamUITestsLaunchTests.swift */; };
 		2024A05529BA37B4003DFC11 /* MyTextRecognizerSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2024A05429BA37B4003DFC11 /* MyTextRecognizerSpy.swift */; };
+		2024A05829BA380E003DFC11 /* MyTextRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2024A05729BA380E003DFC11 /* MyTextRecognizer.swift */; };
 		273C7047DEE8015055DE2878 /* Pods_SimpleMathCamTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E53BDBE69E2E430A7B08FDB2 /* Pods_SimpleMathCamTests.framework */; };
 		8B158322539D3767965CF0D9 /* Pods_SimpleMathCam.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81EAD65A5AAC818DFBB716FD /* Pods_SimpleMathCam.framework */; };
 		E50BEC999BD8132C42D0B76C /* Pods_SimpleMathCam_SimpleMathCamUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5392084A4E3883581C553F2A /* Pods_SimpleMathCam_SimpleMathCamUITests.framework */; };
@@ -56,6 +57,7 @@
 		2024A04229BA17A7003DFC11 /* SimpleMathCamUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleMathCamUITests.swift; sourceTree = "<group>"; };
 		2024A04429BA17A7003DFC11 /* SimpleMathCamUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleMathCamUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		2024A05429BA37B4003DFC11 /* MyTextRecognizerSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTextRecognizerSpy.swift; sourceTree = "<group>"; };
+		2024A05729BA380E003DFC11 /* MyTextRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTextRecognizer.swift; sourceTree = "<group>"; };
 		3B4B2DAE1D0C4206F31C4C5D /* Pods-SimpleMathCam-SimpleMathCamUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleMathCam-SimpleMathCamUITests.debug.xcconfig"; path = "Target Support Files/Pods-SimpleMathCam-SimpleMathCamUITests/Pods-SimpleMathCam-SimpleMathCamUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		5392084A4E3883581C553F2A /* Pods_SimpleMathCam_SimpleMathCamUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SimpleMathCam_SimpleMathCamUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		81EAD65A5AAC818DFBB716FD /* Pods_SimpleMathCam.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SimpleMathCam.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -118,6 +120,8 @@
 		2024A02029BA17A4003DFC11 /* SimpleMathCam */ = {
 			isa = PBXGroup;
 			children = (
+				2024A05929BA385E003DFC11 /* MathTextRecoginerModule */,
+				2024A05629BA37FB003DFC11 /* TextRecognizerModule */,
 				2024A02129BA17A4003DFC11 /* AppDelegate.swift */,
 				2024A02329BA17A4003DFC11 /* SceneDelegate.swift */,
 				2024A02529BA17A4003DFC11 /* MainViewController.swift */,
@@ -145,6 +149,21 @@
 				2024A04429BA17A7003DFC11 /* SimpleMathCamUITestsLaunchTests.swift */,
 			);
 			path = SimpleMathCamUITests;
+			sourceTree = "<group>";
+		};
+		2024A05629BA37FB003DFC11 /* TextRecognizerModule */ = {
+			isa = PBXGroup;
+			children = (
+				2024A05729BA380E003DFC11 /* MyTextRecognizer.swift */,
+			);
+			path = TextRecognizerModule;
+			sourceTree = "<group>";
+		};
+		2024A05929BA385E003DFC11 /* MathTextRecoginerModule */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MathTextRecoginerModule;
 			sourceTree = "<group>";
 		};
 		3F37EC929F4C3790AA648969 /* Pods */ = {
@@ -445,6 +464,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2024A05829BA380E003DFC11 /* MyTextRecognizer.swift in Sources */,
 				2024A02629BA17A4003DFC11 /* MainViewController.swift in Sources */,
 				2024A02229BA17A4003DFC11 /* AppDelegate.swift in Sources */,
 				2024A02429BA17A4003DFC11 /* SceneDelegate.swift in Sources */,
