@@ -1,5 +1,5 @@
 //
-//  MathTextRecognitionTests.swift
+//  MathTextExtractorTests.swift
 //  SimpleMathCamTests
 //
 //  Created by Azam Mukhtar on 09/03/23.
@@ -8,7 +8,7 @@
 import XCTest
 @testable import SimpleMathCam
 
-class MathTextRecognitionTests: XCTestCase {
+class MathTextExtractorTests: XCTestCase {
 
     func test_init_doesNotRequestStringFromImage() {
         let (_, recognizer) = makeSUT()

@@ -13,7 +13,7 @@
 		2024A02929BA17A4003DFC11 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2024A02729BA17A4003DFC11 /* Main.storyboard */; };
 		2024A02B29BA17A6003DFC11 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2024A02A29BA17A6003DFC11 /* Assets.xcassets */; };
 		2024A02E29BA17A6003DFC11 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2024A02C29BA17A6003DFC11 /* LaunchScreen.storyboard */; };
-		2024A03929BA17A7003DFC11 /* MathTextRecognitionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2024A03829BA17A7003DFC11 /* MathTextRecognitionTests.swift */; };
+		2024A03929BA17A7003DFC11 /* MathTextExtractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2024A03829BA17A7003DFC11 /* MathTextExtractorTests.swift */; };
 		2024A04329BA17A7003DFC11 /* SimpleMathCamUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2024A04229BA17A7003DFC11 /* SimpleMathCamUITests.swift */; };
 		2024A04529BA17A7003DFC11 /* SimpleMathCamUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2024A04429BA17A7003DFC11 /* SimpleMathCamUITestsLaunchTests.swift */; };
 		2024A05529BA37B4003DFC11 /* MyTextRecognizerSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2024A05429BA37B4003DFC11 /* MyTextRecognizerSpy.swift */; };
@@ -56,7 +56,7 @@
 		2024A02D29BA17A6003DFC11 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2024A02F29BA17A6003DFC11 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2024A03429BA17A7003DFC11 /* SimpleMathCamTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SimpleMathCamTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		2024A03829BA17A7003DFC11 /* MathTextRecognitionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathTextRecognitionTests.swift; sourceTree = "<group>"; };
+		2024A03829BA17A7003DFC11 /* MathTextExtractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathTextExtractorTests.swift; sourceTree = "<group>"; };
 		2024A03E29BA17A7003DFC11 /* SimpleMathCamUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SimpleMathCamUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2024A04229BA17A7003DFC11 /* SimpleMathCamUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleMathCamUITests.swift; sourceTree = "<group>"; };
 		2024A04429BA17A7003DFC11 /* SimpleMathCamUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleMathCamUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -144,7 +144,7 @@
 		2024A03729BA17A7003DFC11 /* SimpleMathCamTests */ = {
 			isa = PBXGroup;
 			children = (
-				2024A03829BA17A7003DFC11 /* MathTextRecognitionTests.swift */,
+				2024A03829BA17A7003DFC11 /* MathTextExtractorTests.swift */,
 				2024A05429BA37B4003DFC11 /* MyTextRecognizerSpy.swift */,
 			);
 			path = SimpleMathCamTests;
@@ -491,7 +491,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2024A03929BA17A7003DFC11 /* MathTextRecognitionTests.swift in Sources */,
+				2024A03929BA17A7003DFC11 /* MathTextExtractorTests.swift in Sources */,
 				2024A05529BA37B4003DFC11 /* MyTextRecognizerSpy.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
