@@ -17,12 +17,13 @@
 		2024A05529BA37B4003DFC11 /* MyTextRecognizerSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2024A05429BA37B4003DFC11 /* MyTextRecognizerSpy.swift */; };
 		2024A05829BA380E003DFC11 /* MyTextRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2024A05729BA380E003DFC11 /* MyTextRecognizer.swift */; };
 		204AC83329BC8A8C0039D425 /* LocalMathItemsLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204AC83229BC8A8C0039D425 /* LocalMathItemsLoader.swift */; };
-		204AC83629BC8B5D0039D425 /* CoreDataMathItemsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204AC83529BC8B5D0039D425 /* CoreDataMathItemsStore.swift */; };
 		204AC83A29BC8B9B0039D425 /* Math.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 204AC83829BC8B9B0039D425 /* Math.xcdatamodeld */; };
 		204AC83C29BC8BEF0039D425 /* CDMathItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204AC83B29BC8BEF0039D425 /* CDMathItem.swift */; };
 		204AC83E29BC8C4D0039D425 /* CoreDataMathItemStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204AC83D29BC8C4D0039D425 /* CoreDataMathItemStore.swift */; };
 		204AC84029BC8C930039D425 /* CoreDataHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204AC83F29BC8C930039D425 /* CoreDataHelpers.swift */; };
 		204AC84229BC8DE60039D425 /* CoreDataMathItemStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204AC84129BC8DE60039D425 /* CoreDataMathItemStoreTests.swift */; };
+		204AC84629BC95670039D425 /* CodableMathItemsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204AC84529BC95670039D425 /* CodableMathItemsStore.swift */; };
+		204AC84829BC98F10039D425 /* CodableMathItemsStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204AC84729BC98F10039D425 /* CodableMathItemsStoreTests.swift */; };
 		20E75B1829BAB81400861BB5 /* MyMathTextExtractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E75B1729BAB81400861BB5 /* MyMathTextExtractor.swift */; };
 		20E75B1A29BAB82F00861BB5 /* MathItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E75B1929BAB82F00861BB5 /* MathItem.swift */; };
 		20E75B1C29BAB84500861BB5 /* MathTextExtractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E75B1B29BAB84500861BB5 /* MathTextExtractor.swift */; };
@@ -64,12 +65,13 @@
 		2024A05429BA37B4003DFC11 /* MyTextRecognizerSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTextRecognizerSpy.swift; sourceTree = "<group>"; };
 		2024A05729BA380E003DFC11 /* MyTextRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTextRecognizer.swift; sourceTree = "<group>"; };
 		204AC83229BC8A8C0039D425 /* LocalMathItemsLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalMathItemsLoader.swift; sourceTree = "<group>"; };
-		204AC83529BC8B5D0039D425 /* CoreDataMathItemsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataMathItemsStore.swift; sourceTree = "<group>"; };
 		204AC83929BC8B9B0039D425 /* Math.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Math.xcdatamodel; sourceTree = "<group>"; };
 		204AC83B29BC8BEF0039D425 /* CDMathItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CDMathItem.swift; sourceTree = "<group>"; };
 		204AC83D29BC8C4D0039D425 /* CoreDataMathItemStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataMathItemStore.swift; sourceTree = "<group>"; };
 		204AC83F29BC8C930039D425 /* CoreDataHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHelpers.swift; sourceTree = "<group>"; };
 		204AC84129BC8DE60039D425 /* CoreDataMathItemStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataMathItemStoreTests.swift; sourceTree = "<group>"; };
+		204AC84529BC95670039D425 /* CodableMathItemsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableMathItemsStore.swift; sourceTree = "<group>"; };
+		204AC84729BC98F10039D425 /* CodableMathItemsStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableMathItemsStoreTests.swift; sourceTree = "<group>"; };
 		20E75B1729BAB81400861BB5 /* MyMathTextExtractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMathTextExtractor.swift; sourceTree = "<group>"; };
 		20E75B1929BAB82F00861BB5 /* MathItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathItem.swift; sourceTree = "<group>"; };
 		20E75B1B29BAB84500861BB5 /* MathTextExtractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathTextExtractor.swift; sourceTree = "<group>"; };
@@ -154,6 +156,7 @@
 				20E75B1F29BACA7100861BB5 /* MLKitTextRecognizerTests.swift */,
 				20E75B2929BB40A400861BB5 /* LocalMathItemLoaderTests.swift */,
 				204AC84129BC8DE60039D425 /* CoreDataMathItemStoreTests.swift */,
+				204AC84729BC98F10039D425 /* CodableMathItemsStoreTests.swift */,
 			);
 			path = SimpleMathCamTests;
 			sourceTree = "<group>";
@@ -180,9 +183,9 @@
 		204AC83429BC8AD70039D425 /* Math Items Cache */ = {
 			isa = PBXGroup;
 			children = (
+				204AC84429BC95350039D425 /* FileSystem */,
 				204AC83729BC8B720039D425 /* CoreData */,
 				204AC83229BC8A8C0039D425 /* LocalMathItemsLoader.swift */,
-				204AC83529BC8B5D0039D425 /* CoreDataMathItemsStore.swift */,
 			);
 			path = "Math Items Cache";
 			sourceTree = "<group>";
@@ -196,6 +199,14 @@
 				204AC83F29BC8C930039D425 /* CoreDataHelpers.swift */,
 			);
 			path = CoreData;
+			sourceTree = "<group>";
+		};
+		204AC84429BC95350039D425 /* FileSystem */ = {
+			isa = PBXGroup;
+			children = (
+				204AC84529BC95670039D425 /* CodableMathItemsStore.swift */,
+			);
+			path = FileSystem;
 			sourceTree = "<group>";
 		};
 		20E75B2129BACABB00861BB5 /* Helpers */ = {
@@ -439,9 +450,9 @@
 				204AC84029BC8C930039D425 /* CoreDataHelpers.swift in Sources */,
 				2024A05829BA380E003DFC11 /* MyTextRecognizer.swift in Sources */,
 				2024A02629BA17A4003DFC11 /* MainViewController.swift in Sources */,
-				204AC83629BC8B5D0039D425 /* CoreDataMathItemsStore.swift in Sources */,
 				20E75B2C29BB419700861BB5 /* MathItemsStore.swift in Sources */,
 				20E75B1C29BAB84500861BB5 /* MathTextExtractor.swift in Sources */,
+				204AC84629BC95670039D425 /* CodableMathItemsStore.swift in Sources */,
 				20E75B1E29BAB86200861BB5 /* MathItemMapper.swift in Sources */,
 				2024A02229BA17A4003DFC11 /* AppDelegate.swift in Sources */,
 				2024A02429BA17A4003DFC11 /* SceneDelegate.swift in Sources */,
@@ -455,6 +466,7 @@
 			files = (
 				20E75B2A29BB40A400861BB5 /* LocalMathItemLoaderTests.swift in Sources */,
 				204AC84229BC8DE60039D425 /* CoreDataMathItemStoreTests.swift in Sources */,
+				204AC84829BC98F10039D425 /* CodableMathItemsStoreTests.swift in Sources */,
 				2024A03929BA17A7003DFC11 /* MathTextExtractorTests.swift in Sources */,
 				20E75B2E29BB42F900861BB5 /* MathItemsStoreSpy.swift in Sources */,
 				2024A05529BA37B4003DFC11 /* MyTextRecognizerSpy.swift in Sources */,
