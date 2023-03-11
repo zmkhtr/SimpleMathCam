@@ -16,6 +16,7 @@
 		2024A03929BA17A7003DFC11 /* MathTextExtractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2024A03829BA17A7003DFC11 /* MathTextExtractorTests.swift */; };
 		2024A05529BA37B4003DFC11 /* MyTextRecognizerSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2024A05429BA37B4003DFC11 /* MyTextRecognizerSpy.swift */; };
 		2024A05829BA380E003DFC11 /* MyTextRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2024A05729BA380E003DFC11 /* MyTextRecognizer.swift */; };
+		204AC83329BC8A8C0039D425 /* LocalMathItemsLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204AC83229BC8A8C0039D425 /* LocalMathItemsLoader.swift */; };
 		20E75B1829BAB81400861BB5 /* MyMathTextExtractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E75B1729BAB81400861BB5 /* MyMathTextExtractor.swift */; };
 		20E75B1A29BAB82F00861BB5 /* MathItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E75B1929BAB82F00861BB5 /* MathItem.swift */; };
 		20E75B1C29BAB84500861BB5 /* MathTextExtractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E75B1B29BAB84500861BB5 /* MathTextExtractor.swift */; };
@@ -56,6 +57,7 @@
 		2024A03829BA17A7003DFC11 /* MathTextExtractorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathTextExtractorTests.swift; sourceTree = "<group>"; };
 		2024A05429BA37B4003DFC11 /* MyTextRecognizerSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTextRecognizerSpy.swift; sourceTree = "<group>"; };
 		2024A05729BA380E003DFC11 /* MyTextRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTextRecognizer.swift; sourceTree = "<group>"; };
+		204AC83229BC8A8C0039D425 /* LocalMathItemsLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalMathItemsLoader.swift; sourceTree = "<group>"; };
 		20E75B1729BAB81400861BB5 /* MyMathTextExtractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMathTextExtractor.swift; sourceTree = "<group>"; };
 		20E75B1929BAB82F00861BB5 /* MathItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathItem.swift; sourceTree = "<group>"; };
 		20E75B1B29BAB84500861BB5 /* MathTextExtractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathTextExtractor.swift; sourceTree = "<group>"; };
@@ -157,7 +159,6 @@
 			isa = PBXGroup;
 			children = (
 				20E75B1729BAB81400861BB5 /* MyMathTextExtractor.swift */,
-				20E75B1929BAB82F00861BB5 /* MathItem.swift */,
 				20E75B1B29BAB84500861BB5 /* MathTextExtractor.swift */,
 				20E75B1D29BAB86200861BB5 /* MathItemMapper.swift */,
 			);
@@ -177,8 +178,10 @@
 		20E75B2629BB3FEE00861BB5 /* Math Feature Module */ = {
 			isa = PBXGroup;
 			children = (
+				20E75B1929BAB82F00861BB5 /* MathItem.swift */,
 				20E75B2729BB405400861BB5 /* MathItemsLoader.swift */,
 				20E75B2B29BB419700861BB5 /* MathItemsStore.swift */,
+				204AC83229BC8A8C0039D425 /* LocalMathItemsLoader.swift */,
 			);
 			path = "Math Feature Module";
 			sourceTree = "<group>";
@@ -395,6 +398,7 @@
 				20E75B2829BB405400861BB5 /* MathItemsLoader.swift in Sources */,
 				20E75B2529BB3E2200861BB5 /* MLKitTextRecognizer.swift in Sources */,
 				20E75B1A29BAB82F00861BB5 /* MathItem.swift in Sources */,
+				204AC83329BC8A8C0039D425 /* LocalMathItemsLoader.swift in Sources */,
 				20E75B1829BAB81400861BB5 /* MyMathTextExtractor.swift in Sources */,
 				2024A05829BA380E003DFC11 /* MyTextRecognizer.swift in Sources */,
 				2024A02629BA17A4003DFC11 /* MainViewController.swift in Sources */,
