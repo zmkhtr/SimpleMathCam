@@ -7,12 +7,12 @@
 
 import Foundation
 
-struct MathItem: Hashable {
-    let id: UUID
-    let question: String
-    let answer: String
+public struct MathItem: Hashable {
+    public let id: UUID
+    public let question: String
+    public let answer: String
     
-    init(id: UUID, question: String, answer: String) {
+    public init(id: UUID, question: String, answer: String) {
         self.id = id
         self.question = question
         self.answer = answer

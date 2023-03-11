@@ -23,6 +23,10 @@
 		20E75B2029BACA7100861BB5 /* MLKitTextRecognizerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E75B1F29BACA7100861BB5 /* MLKitTextRecognizerTests.swift */; };
 		20E75B2329BACAD100861BB5 /* TestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E75B2229BACAD100861BB5 /* TestHelpers.swift */; };
 		20E75B2529BB3E2200861BB5 /* MLKitTextRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E75B2429BB3E2200861BB5 /* MLKitTextRecognizer.swift */; };
+		20E75B2829BB405400861BB5 /* MathItemsLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E75B2729BB405400861BB5 /* MathItemsLoader.swift */; };
+		20E75B2A29BB40A400861BB5 /* LocalMathItemLoaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E75B2929BB40A400861BB5 /* LocalMathItemLoaderTests.swift */; };
+		20E75B2C29BB419700861BB5 /* MathItemsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E75B2B29BB419700861BB5 /* MathItemsStore.swift */; };
+		20E75B2E29BB42F900861BB5 /* MathItemsStoreSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E75B2D29BB42F900861BB5 /* MathItemsStoreSpy.swift */; };
 		273C7047DEE8015055DE2878 /* Pods_SimpleMathCamTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E53BDBE69E2E430A7B08FDB2 /* Pods_SimpleMathCamTests.framework */; };
 		8B158322539D3767965CF0D9 /* Pods_SimpleMathCam.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81EAD65A5AAC818DFBB716FD /* Pods_SimpleMathCam.framework */; };
 /* End PBXBuildFile section */
@@ -59,6 +63,10 @@
 		20E75B1F29BACA7100861BB5 /* MLKitTextRecognizerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLKitTextRecognizerTests.swift; sourceTree = "<group>"; };
 		20E75B2229BACAD100861BB5 /* TestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestHelpers.swift; sourceTree = "<group>"; };
 		20E75B2429BB3E2200861BB5 /* MLKitTextRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MLKitTextRecognizer.swift; sourceTree = "<group>"; };
+		20E75B2729BB405400861BB5 /* MathItemsLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathItemsLoader.swift; sourceTree = "<group>"; };
+		20E75B2929BB40A400861BB5 /* LocalMathItemLoaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalMathItemLoaderTests.swift; sourceTree = "<group>"; };
+		20E75B2B29BB419700861BB5 /* MathItemsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathItemsStore.swift; sourceTree = "<group>"; };
+		20E75B2D29BB42F900861BB5 /* MathItemsStoreSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathItemsStoreSpy.swift; sourceTree = "<group>"; };
 		3B4B2DAE1D0C4206F31C4C5D /* Pods-SimpleMathCam-SimpleMathCamUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleMathCam-SimpleMathCamUITests.debug.xcconfig"; path = "Target Support Files/Pods-SimpleMathCam-SimpleMathCamUITests/Pods-SimpleMathCam-SimpleMathCamUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		5392084A4E3883581C553F2A /* Pods_SimpleMathCam_SimpleMathCamUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SimpleMathCam_SimpleMathCamUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		81EAD65A5AAC818DFBB716FD /* Pods_SimpleMathCam.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SimpleMathCam.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -111,6 +119,7 @@
 		2024A02029BA17A4003DFC11 /* SimpleMathCam */ = {
 			isa = PBXGroup;
 			children = (
+				20E75B2629BB3FEE00861BB5 /* Math Feature Module */,
 				2024A05929BA385E003DFC11 /* MathTextExtractorModule */,
 				2024A05629BA37FB003DFC11 /* TextRecognizerModule */,
 				2024A02129BA17A4003DFC11 /* AppDelegate.swift */,
@@ -130,6 +139,7 @@
 				20E75B2129BACABB00861BB5 /* Helpers */,
 				2024A03829BA17A7003DFC11 /* MathTextExtractorTests.swift */,
 				20E75B1F29BACA7100861BB5 /* MLKitTextRecognizerTests.swift */,
+				20E75B2929BB40A400861BB5 /* LocalMathItemLoaderTests.swift */,
 			);
 			path = SimpleMathCamTests;
 			sourceTree = "<group>";
@@ -159,8 +169,18 @@
 			children = (
 				2024A05429BA37B4003DFC11 /* MyTextRecognizerSpy.swift */,
 				20E75B2229BACAD100861BB5 /* TestHelpers.swift */,
+				20E75B2D29BB42F900861BB5 /* MathItemsStoreSpy.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		20E75B2629BB3FEE00861BB5 /* Math Feature Module */ = {
+			isa = PBXGroup;
+			children = (
+				20E75B2729BB405400861BB5 /* MathItemsLoader.swift */,
+				20E75B2B29BB419700861BB5 /* MathItemsStore.swift */,
+			);
+			path = "Math Feature Module";
 			sourceTree = "<group>";
 		};
 		3F37EC929F4C3790AA648969 /* Pods */ = {
@@ -372,11 +392,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20E75B2829BB405400861BB5 /* MathItemsLoader.swift in Sources */,
 				20E75B2529BB3E2200861BB5 /* MLKitTextRecognizer.swift in Sources */,
 				20E75B1A29BAB82F00861BB5 /* MathItem.swift in Sources */,
 				20E75B1829BAB81400861BB5 /* MyMathTextExtractor.swift in Sources */,
 				2024A05829BA380E003DFC11 /* MyTextRecognizer.swift in Sources */,
 				2024A02629BA17A4003DFC11 /* MainViewController.swift in Sources */,
+				20E75B2C29BB419700861BB5 /* MathItemsStore.swift in Sources */,
 				20E75B1C29BAB84500861BB5 /* MathTextExtractor.swift in Sources */,
 				20E75B1E29BAB86200861BB5 /* MathItemMapper.swift in Sources */,
 				2024A02229BA17A4003DFC11 /* AppDelegate.swift in Sources */,
@@ -388,7 +410,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20E75B2A29BB40A400861BB5 /* LocalMathItemLoaderTests.swift in Sources */,
 				2024A03929BA17A7003DFC11 /* MathTextExtractorTests.swift in Sources */,
+				20E75B2E29BB42F900861BB5 /* MathItemsStoreSpy.swift in Sources */,
 				2024A05529BA37B4003DFC11 /* MyTextRecognizerSpy.swift in Sources */,
 				20E75B2029BACA7100861BB5 /* MLKitTextRecognizerTests.swift in Sources */,
 				20E75B2329BACAD100861BB5 /* TestHelpers.swift in Sources */,
