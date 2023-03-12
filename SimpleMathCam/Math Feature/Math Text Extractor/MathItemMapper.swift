@@ -32,13 +32,15 @@ class MathItemMapper {
             }
             
             if value == "," || value == "." {
-                if let _ = Int("\(Array(text)[index - 1])"),
-                   let _ = Int("\(Array(text)[index + 1])") {
-                    if !numbersFront.contains(".") {
-                        numbersFront.append(".")
-                    } else if !numbersEnd.contains(".") {
-                        lastIndex = 0
-                        numbersEnd.append(".")
+                if textArray.indices.contains(index - 1) && textArray.indices.contains(index + 1) {
+                    if let _ = Int("\(Array(text)[index - 1])"),
+                       let _ = Int("\(Array(text)[index + 1])") {
+                        if !numbersFront.contains(".") {
+                            numbersFront.append(".")
+                        } else if !numbersEnd.contains(".") {
+                            lastIndex = 0
+                            numbersEnd.append(".")
+                        }
                     }
                 }
             }
@@ -69,7 +71,7 @@ class MathItemMapper {
 
         if let firstNumbers = Double(numbersFront.joined()),
             let secondNumbers = Double(numbersEnd.joined()) {
-            question = "\(firstNumbers)\(mathSymbol)\(secondNumbers)"
+            question = "\(firstNumbers.clean)\(mathSymbol)\(secondNumbers.clean)"
         } else {
             throw MathTextExtractor.Error.invalidData
         }
@@ -81,7 +83,7 @@ class MathItemMapper {
         if !mathSymbol.isEmpty {
             let expn = NSExpression(format: "\(numbersFront.joined())\(mathSymbol)\(numbersEnd.joined())")
             if let answerDouble = expn.expressionValue(with: nil, context: nil) as? Double {
-                answer = "\(answerDouble)"
+                answer = "\(answerDouble.clean)"
             } else {
                 throw MathTextExtractor.Error.invalidData
             }

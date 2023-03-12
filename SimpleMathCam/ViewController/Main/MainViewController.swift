@@ -13,6 +13,7 @@ class MainViewController: UIViewController, UINavigationControllerDelegate {
     @IBOutlet weak var buttonAdd: UIImageView!
     @IBOutlet weak var buttonFileStorage: UIButton!
     @IBOutlet weak var buttonDatabaseStorage: UIButton!
+    @IBOutlet weak var emptyLabel: UILabel!
     
     private var items: [MathItem] = []
     private var viewModel: MainViewModel?
@@ -30,7 +31,6 @@ class MainViewController: UIViewController, UINavigationControllerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
 
         setupAddButton()
         bindViewModel()
@@ -41,29 +41,37 @@ class MainViewController: UIViewController, UINavigationControllerDelegate {
         
         viewModel?.onMathItemsLoad = { [weak self] items in
             guard let self = self else { return }
-            print("Items \(items.count)")
+            if items.isEmpty {
+                self.emptyLabel.isHidden = false
+            } else {
+                self.emptyLabel.isHidden = true
+            }
             self.items = items
             self.tableView.reloadData()
         }
         
-        viewModel?.onErrorStateChange = { error in
-            print("onErrorStateChange \(error)")
+        viewModel?.onErrorStateChange = { [weak self] error in
+            guard let self = self else { return }
+            if error != nil {
+                self.presentDialog(title: "Error", message: "Error getting data")
+            }
         }
         
-        viewModel?.onLoadingStateChange = { isLoading in
-            print("onLoadingStateChange \(isLoading)")
+        viewModel?.onErrorRecognizeStateChange = { [weak self] error in
+            guard let self = self else { return }
+            if error != nil {
+                self.presentDialog(title: "Error", message: "No math detected")
+            }
 
         }
-        
-        viewModel?.onErrorRecognizeStateChange = { error in
-            print("onErrorRecognizeStateChange \(error)")
-
-        }
-        
-        viewModel?.onLoadingRecognizeStateChange = { isLoading in
-            print("onLoadingRecognizeStateChange \(isLoading)")
-
-        }
+    }
+    
+    private func presentDialog(title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { _ in
+            
+        }))
+        self.present(alert, animated: true, completion: nil)
     }
     
     private func setupAddButton() {

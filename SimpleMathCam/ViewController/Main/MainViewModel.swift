@@ -30,19 +30,15 @@ class MainViewModel {
         self.databaseStore = databaseStore
     }
     
-    var onLoadingStateChange: Observer<Bool>?
     var onErrorStateChange: Observer<String?>?
     var onMathItemsLoad: Observer<[MathItem]>?
     
-    var onLoadingRecognizeStateChange: Observer<Bool>?
     var onErrorRecognizeStateChange: Observer<String?>?
     
     func recognize(image: UIImage) {
-        onLoadingRecognizeStateChange?(true)
         
         recognizer.extract(image: image) { [weak self] result in
             guard let self = self else { return }
-            self.onLoadingRecognizeStateChange?(false)
 
             switch result {
             case let .success(math):
@@ -67,12 +63,10 @@ class MainViewModel {
     }
     
     func load() {
-        onLoadingStateChange?(true)
         
         let store = toFileStorage ? fileStore : databaseStore
         loader.get(from: store) { [weak self] result in
             guard let self = self else { return }
-            self.onLoadingStateChange?(false)
 
             switch result {
             case let .success(items):

@@ -678,6 +678,8 @@
 				DEVELOPMENT_TEAM = X7PX2RYRJL;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SimpleMathCam/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "We use the data from the camera for the image recognition.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "We use the data from the photo library for the image recognition.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -708,6 +710,8 @@
 				DEVELOPMENT_TEAM = X7PX2RYRJL;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SimpleMathCam/Info.plist;
+				INFOPLIST_KEY_NSCameraUsageDescription = "We use the data from the camera for the image recognition.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "We use the data from the photo library for the image recognition.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;

@@ -24,7 +24,7 @@ class LocalMathItemsLoader: MathItemsLoader {
                 if let math = math {
                     completion(.success(math))
                 } else {
-                    completion(.failure(LoadError.notFound))
+                    completion(.success([]))
                 }
             case .failure:
                 completion(.failure(LoadError.failed))

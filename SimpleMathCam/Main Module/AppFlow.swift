@@ -33,7 +33,7 @@ final class AppFlow: NSObject {
     }()
     
     lazy var isFromCamera: Bool = {
-        return true
+        return false
 //        return Bundle.main.infoDictionary! ["API_BASE_URL"] as! Bool
     }()
     

@@ -114,6 +114,12 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You don't have any data (+) to add data." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i70-Uj-Ur8">
+                                <rect key="frame" x="44.666666666666657" y="416" width="304" height="20.333333333333314"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -121,12 +127,14 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="bLL-g1-RPz" secondAttribute="bottom" constant="16" id="4yB-6B-Owv"/>
                             <constraint firstItem="gyd-nn-bVw" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Bhj-Hc-WUy"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bLL-g1-RPz" secondAttribute="trailing" constant="16" id="LD7-mO-JO2"/>
+                            <constraint firstItem="i70-Uj-Ur8" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="LnF-4r-0vk"/>
                             <constraint firstItem="bLL-g1-RPz" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="RIb-SA-a2r"/>
                             <constraint firstItem="bLL-g1-RPz" firstAttribute="top" secondItem="gyd-nn-bVw" secondAttribute="bottom" id="UOs-fi-Uad"/>
                             <constraint firstItem="bLL-g1-RPz" firstAttribute="top" secondItem="JdL-Ju-76s" secondAttribute="bottom" constant="16" id="ej7-kS-4Yy"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="JdL-Ju-76s" secondAttribute="trailing" constant="16" id="gSq-nL-srS"/>
                             <constraint firstItem="gyd-nn-bVw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="hnF-dn-ash"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="gyd-nn-bVw" secondAttribute="trailing" id="re5-XJ-4ry"/>
+                            <constraint firstItem="i70-Uj-Ur8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="wKq-sD-Nx3"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Wd4-BP-3oR"/>
@@ -134,6 +142,7 @@
                         <outlet property="buttonAdd" destination="JdL-Ju-76s" id="mdM-i6-pYA"/>
                         <outlet property="buttonDatabaseStorage" destination="TtV-6C-XJq" id="eGB-rU-pgt"/>
                         <outlet property="buttonFileStorage" destination="9XD-yf-uaw" id="AQ3-cG-cZq"/>
+                        <outlet property="emptyLabel" destination="i70-Uj-Ur8" id="F1T-Lv-FlM"/>
                         <outlet property="tableView" destination="gyd-nn-bVw" id="l1I-vW-cgE"/>
                     </connections>
                 </viewController>
