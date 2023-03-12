@@ -16,30 +16,33 @@ class LocalMathItemLoaderTests: XCTestCase {
 
     func test_loadMathItems_failsOnStoreError() {
         let sut = makeSUT()
+        let store = storeSpy()
 
-//        expectGetAll(sut, toCompleteWith: .failure(LocalMathItemsLoader.LoadError.failed), when: {
-//            let retrievalError = anyNSError()
-//            storeSpy().completeAllRetrieval(with: retrievalError)
-//        })
+        expectGetAll(sut, store: store, toCompleteWith: .failure(LocalMathItemsLoader.LoadError.failed), when: {
+            let retrievalError = anyNSError()
+            store.completeAllRetrieval(with: retrievalError)
+        })
     }
 
-    func test_loadMathItems_deliversNotFoundErrorOnNotFound() {
+    func test_loadMathItems_deliversEmptyItemsOnNotFound() {
         let sut = makeSUT()
         let store = storeSpy()
-//        expectGetAll(sut, toCompleteWith: .failure(LocalMathItemsLoader.LoadError.notFound), when: {
-//            store.completeAllRetrieval(with: .none)
-//        })
+        
+        expectGetAll(sut, store: store, toCompleteWith: .success([]), when: {
+            store.completeAllRetrieval(with: [])
+        })
     }
 
     func test_loadMathItems_deliversStoredDataOnFoundData() {
         let sut = makeSUT()
+        let store = storeSpy()
         let foundData1 = makeItem()
         let foundData2 = makeItem()
 
 
-//        expectGetAll(sut, toCompleteWith: .success([foundData1, foundData2]), when: {
-//            storeSpy().completeAllRetrieval(with: [foundData1, foundData2], at: 0)
-//        })
+        expectGetAll(sut, store: store, toCompleteWith: .success([foundData1, foundData2]), when: {
+            store.completeAllRetrieval(with: [foundData1, foundData2], at: 0)
+        })
     }
 
     func test_loadMathItemsL_doesNotDeliverResultAfterSUTInstanceHasBeenDeallocated() {
@@ -47,7 +50,7 @@ class LocalMathItemLoaderTests: XCTestCase {
         var sut: LocalMathItemsLoader? = LocalMathItemsLoader()
 
         var received = [LocalMathItemsLoader.Result]()
-        sut?.get(from: storeSpy()) { received.append($0) }
+        sut?.get(from: store) { received.append($0) }
 
         sut = nil
         store.completeAllRetrieval(with: [makeItem()])
