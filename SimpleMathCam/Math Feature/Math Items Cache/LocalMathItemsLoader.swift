@@ -8,7 +8,7 @@
 import Foundation
 
 class LocalMathItemsLoader: MathItemsLoader {
-    private let store: MathItemsStore
+    var store: MathItemsStore
     
     typealias Result = MathItemsLoader.Result
     
@@ -34,6 +34,20 @@ class LocalMathItemsLoader: MathItemsLoader {
             case .failure:
                 completion(.failure(LoadError.failed))
             }
+        }
+    }
+}
+
+extension LocalMathItemsLoader: MathItemCache {
+    public enum SaveError: Error {
+        case failed
+    }
+    
+    func save(_ math: MathItem, completion: @escaping (MathItemCache.Result) -> Void) {
+        store.insert(math) { [weak self] result in
+            guard self != nil else { return }
+            
+            completion(result.mapError { _ in SaveError.failed } )
         }
     }
 }

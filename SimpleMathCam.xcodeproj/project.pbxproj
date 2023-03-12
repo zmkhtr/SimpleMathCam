@@ -25,6 +25,8 @@
 		204AC84629BC95670039D425 /* CodableMathItemsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204AC84529BC95670039D425 /* CodableMathItemsStore.swift */; };
 		204AC84829BC98F10039D425 /* CodableMathItemsStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204AC84729BC98F10039D425 /* CodableMathItemsStoreTests.swift */; };
 		204AC84B29BDD1F20039D425 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204AC84929BDD1EB0039D425 /* MainViewModel.swift */; };
+		204AC84D29BDD45F0039D425 /* MathTextExtractorCacheDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204AC84C29BDD45F0039D425 /* MathTextExtractorCacheDecorator.swift */; };
+		204AC84F29BDD50E0039D425 /* MathItemCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 204AC84E29BDD50E0039D425 /* MathItemCache.swift */; };
 		20E75B1829BAB81400861BB5 /* MyMathTextExtractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E75B1729BAB81400861BB5 /* MyMathTextExtractor.swift */; };
 		20E75B1A29BAB82F00861BB5 /* MathItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E75B1929BAB82F00861BB5 /* MathItem.swift */; };
 		20E75B1C29BAB84500861BB5 /* MathTextExtractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20E75B1B29BAB84500861BB5 /* MathTextExtractor.swift */; };
@@ -74,6 +76,8 @@
 		204AC84529BC95670039D425 /* CodableMathItemsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableMathItemsStore.swift; sourceTree = "<group>"; };
 		204AC84729BC98F10039D425 /* CodableMathItemsStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableMathItemsStoreTests.swift; sourceTree = "<group>"; };
 		204AC84929BDD1EB0039D425 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		204AC84C29BDD45F0039D425 /* MathTextExtractorCacheDecorator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathTextExtractorCacheDecorator.swift; sourceTree = "<group>"; };
+		204AC84E29BDD50E0039D425 /* MathItemCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathItemCache.swift; sourceTree = "<group>"; };
 		20E75B1729BAB81400861BB5 /* MyMathTextExtractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyMathTextExtractor.swift; sourceTree = "<group>"; };
 		20E75B1929BAB82F00861BB5 /* MathItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathItem.swift; sourceTree = "<group>"; };
 		20E75B1B29BAB84500861BB5 /* MathTextExtractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MathTextExtractor.swift; sourceTree = "<group>"; };
@@ -137,13 +141,11 @@
 		2024A02029BA17A4003DFC11 /* SimpleMathCam */ = {
 			isa = PBXGroup;
 			children = (
+				204AC85229BDE91C0039D425 /* ViewController */,
 				20E75B2629BB3FEE00861BB5 /* Math Feature */,
 				2024A05629BA37FB003DFC11 /* Text Recognizer Feature */,
 				2024A02129BA17A4003DFC11 /* AppDelegate.swift */,
 				2024A02329BA17A4003DFC11 /* SceneDelegate.swift */,
-				2024A02529BA17A4003DFC11 /* MainViewController.swift */,
-				204AC84929BDD1EB0039D425 /* MainViewModel.swift */,
-				2024A02729BA17A4003DFC11 /* Main.storyboard */,
 				2024A02A29BA17A6003DFC11 /* Assets.xcassets */,
 				2024A02C29BA17A6003DFC11 /* LaunchScreen.storyboard */,
 				2024A02F29BA17A6003DFC11 /* Info.plist */,
@@ -189,6 +191,7 @@
 				204AC84429BC95350039D425 /* FileSystem */,
 				204AC83729BC8B720039D425 /* CoreData */,
 				204AC83229BC8A8C0039D425 /* LocalMathItemsLoader.swift */,
+				204AC84E29BDD50E0039D425 /* MathItemCache.swift */,
 			);
 			path = "Math Items Cache";
 			sourceTree = "<group>";
@@ -212,6 +215,24 @@
 			path = FileSystem;
 			sourceTree = "<group>";
 		};
+		204AC85229BDE91C0039D425 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				204AC85329BDE9350039D425 /* Main */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		204AC85329BDE9350039D425 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				2024A02529BA17A4003DFC11 /* MainViewController.swift */,
+				204AC84929BDD1EB0039D425 /* MainViewModel.swift */,
+				2024A02729BA17A4003DFC11 /* Main.storyboard */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
 		20E75B2129BACABB00861BB5 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -225,6 +246,7 @@
 		20E75B2629BB3FEE00861BB5 /* Math Feature */ = {
 			isa = PBXGroup;
 			children = (
+				204AC84C29BDD45F0039D425 /* MathTextExtractorCacheDecorator.swift */,
 				2024A05929BA385E003DFC11 /* Math Text Extractor */,
 				204AC83429BC8AD70039D425 /* Math Items Cache */,
 				20E75B1929BAB82F00861BB5 /* MathItem.swift */,
@@ -445,6 +467,7 @@
 			files = (
 				20E75B2829BB405400861BB5 /* MathItemsLoader.swift in Sources */,
 				20E75B2529BB3E2200861BB5 /* MLKitTextRecognizer.swift in Sources */,
+				204AC84D29BDD45F0039D425 /* MathTextExtractorCacheDecorator.swift in Sources */,
 				20E75B1A29BAB82F00861BB5 /* MathItem.swift in Sources */,
 				204AC83329BC8A8C0039D425 /* LocalMathItemsLoader.swift in Sources */,
 				20E75B1829BAB81400861BB5 /* MyMathTextExtractor.swift in Sources */,
@@ -453,6 +476,7 @@
 				204AC84029BC8C930039D425 /* CoreDataHelpers.swift in Sources */,
 				2024A05829BA380E003DFC11 /* MyTextRecognizer.swift in Sources */,
 				2024A02629BA17A4003DFC11 /* MainViewController.swift in Sources */,
+				204AC84F29BDD50E0039D425 /* MathItemCache.swift in Sources */,
 				20E75B2C29BB419700861BB5 /* MathItemsStore.swift in Sources */,
 				20E75B1C29BAB84500861BB5 /* MathTextExtractor.swift in Sources */,
 				204AC84629BC95670039D425 /* CodableMathItemsStore.swift in Sources */,

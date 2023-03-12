@@ -10,23 +10,58 @@ import UIKit
 class MainViewController: UIViewController, UINavigationControllerDelegate {
 
     @IBOutlet weak var tableView: UITableView!
-    
     @IBOutlet weak var buttonAdd: UIImageView!
-    
     @IBOutlet weak var buttonFileStorage: UIButton!
-    
     @IBOutlet weak var buttonDatabaseStorage: UIButton!
     
     private var imagePicker = UIImagePickerController()
 
+    private var viewModel: MainViewModel?
+    private var onAddButtonPress: (() -> Void)?
+
+    init?(coder: NSCoder, viewModel: MainViewModel, onAddButtonPress: @escaping (() -> Void)) {
+        self.viewModel = viewModel
+        self.onAddButtonPress = onAddButtonPress
+        super.init(coder: coder)
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
 
         setupImagePicker()
         setupAddButton()
+        bindViewModel()
     }
 
+    private func bindViewModel() {
+        viewModel?.load()
+        
+        viewModel?.onMathItemsLoad = { items in
+            
+        }
+        
+        viewModel?.onErrorStateChange = { error in
+            
+        }
+        
+        viewModel?.onLoadingStateChange = { isLoading in
+            
+        }
+        
+        viewModel?.onErrorRecognizeStateChange = { error in
+            
+        }
+        
+        viewModel?.onLoadingRecognizeStateChange = { isLoading in
+            
+        }
+    }
+    
     private func setupAddButton() {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(addButtonAction(tapGestureRecognizer:)))
         buttonAdd.isUserInteractionEnabled = true
@@ -34,7 +69,8 @@ class MainViewController: UIViewController, UINavigationControllerDelegate {
     }
     
     @objc func addButtonAction(tapGestureRecognizer: UITapGestureRecognizer) {
-        openCamera()
+//        openCamera()
+        onAddButtonPress?()
     }
     
     @IBAction func changeToFileStorageAction(_ sender: UIButton) {
@@ -42,6 +78,7 @@ class MainViewController: UIViewController, UINavigationControllerDelegate {
         let selectedImage = UIImage(systemName: "circle.fill")
         buttonFileStorage.setImage(selectedImage, for: .normal)
         buttonDatabaseStorage.setImage(unselectedImage, for: .normal)
+        viewModel?.changeDatabase(toFileStorage: true)
     }
     
     @IBAction func changeToDatabaseStorageAction(_ sender: UIButton) {
@@ -49,6 +86,7 @@ class MainViewController: UIViewController, UINavigationControllerDelegate {
         let selectedImage = UIImage(systemName: "circle.fill")
         buttonFileStorage.setImage(unselectedImage, for: .normal)
         buttonDatabaseStorage.setImage(selectedImage, for: .normal)
+        viewModel?.changeDatabase(toFileStorage: false)
     }
    
     private func setupImagePicker() {
