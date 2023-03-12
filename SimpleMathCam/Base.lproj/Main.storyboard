@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -55,6 +55,10 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="Q9P-rq-rZH"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="gOe-sz-19h"/>
+                                </connections>
                             </tableView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="plus.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="JdL-Ju-76s">
                                 <rect key="frame" x="321" y="654.33333333333337" width="56" height="54.666666666666629"/>
@@ -79,6 +83,9 @@
                                                 <rect key="frame" x="311.33333333333331" y="0.0" width="49.666666666666686" height="34.333333333333336"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" image="circle.fill" catalog="system"/>
+                                                <connections>
+                                                    <action selector="changeToFileStorageAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Yqq-c7-4N8"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -95,6 +102,9 @@
                                                 <rect key="frame" x="311.33333333333331" y="0.0" width="49.666666666666686" height="34.333333333333336"/>
                                                 <state key="normal" title="Button"/>
                                                 <buttonConfiguration key="configuration" style="plain" image="circle" catalog="system"/>
+                                                <connections>
+                                                    <action selector="changeToDatabaseStorageAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7sr-Yz-unY"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -116,6 +126,12 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Wd4-BP-3oR"/>
+                    <connections>
+                        <outlet property="buttonAdd" destination="JdL-Ju-76s" id="mdM-i6-pYA"/>
+                        <outlet property="buttonDatabaseStorage" destination="TtV-6C-XJq" id="eGB-rU-pgt"/>
+                        <outlet property="buttonFileStorage" destination="9XD-yf-uaw" id="AQ3-cG-cZq"/>
+                        <outlet property="tableView" destination="gyd-nn-bVw" id="l1I-vW-cgE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
