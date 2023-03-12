@@ -99,6 +99,18 @@ EOM
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_resource "${PODS_CONFIGURATION_BUILD_DIR}/MLKitTextRecognition/GoogleMVTextDetectorResources.bundle"
 fi
+if [[ "$CONFIGURATION" == "green-built-in" ]]; then
+  install_resource "${PODS_CONFIGURATION_BUILD_DIR}/MLKitTextRecognition/GoogleMVTextDetectorResources.bundle"
+fi
+if [[ "$CONFIGURATION" == "green-camera-roll" ]]; then
+  install_resource "${PODS_CONFIGURATION_BUILD_DIR}/MLKitTextRecognition/GoogleMVTextDetectorResources.bundle"
+fi
+if [[ "$CONFIGURATION" == "red-camera-roll" ]]; then
+  install_resource "${PODS_CONFIGURATION_BUILD_DIR}/MLKitTextRecognition/GoogleMVTextDetectorResources.bundle"
+fi
+if [[ "$CONFIGURATION" == "red-built-in" ]]; then
+  install_resource "${PODS_CONFIGURATION_BUILD_DIR}/MLKitTextRecognition/GoogleMVTextDetectorResources.bundle"
+fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_resource "${PODS_CONFIGURATION_BUILD_DIR}/MLKitTextRecognition/GoogleMVTextDetectorResources.bundle"
 fi

@@ -14,8 +14,4 @@ target 'SimpleMathCam' do
     # Pods for testing
   end
 
-  target 'SimpleMathCamUITests' do
-    # Pods for testing
-  end
-
 end

@@ -2,6 +2,14 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>IS_FROM_CAMERA</key>
+	<string>${IS_FROM_CAMERA}</string>
+	<key>IS_RED_THEME</key>
+	<string>${IS_RED_THEME}</string>
+	<key>NSCameraUsageDescription</key>
+	<string>We use the data from the camera for the image recognition.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>We use the data from the photo library for the image recognition.</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>

@@ -33,13 +33,21 @@ final class AppFlow: NSObject {
     }()
     
     lazy var isFromCamera: Bool = {
-        return false
-//        return Bundle.main.infoDictionary! ["API_BASE_URL"] as! Bool
+        let isFromCameraString = Bundle.main.infoDictionary! ["IS_FROM_CAMERA"] as! String
+        if isFromCameraString == "YES" {
+            return true
+        } else {
+            return false
+        }
     }()
     
     lazy var isRedTheme: Bool = {
-        return true
-//        return Bundle.main.infoDictionary! ["API_BASE_URL"] as! Bool
+        let isRedThemeString = Bundle.main.infoDictionary! ["IS_RED_THEME"] as! String
+        if isRedThemeString == "YES" {
+            return true
+        } else {
+            return false
+        }
     }()
     
     private let navigationController: UINavigationController
@@ -69,7 +77,7 @@ final class AppFlow: NSObject {
         imagePicker.delegate = self
         imagePicker.allowsEditing = true
         imagePicker.sourceType = isFromCamera ? .camera : .photoLibrary
-
+print("ISFROM \(isFromCamera)")
         navigationController.present(imagePicker, animated: true)
     }
 }
