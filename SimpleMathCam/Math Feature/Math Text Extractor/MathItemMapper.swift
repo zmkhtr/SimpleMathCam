@@ -64,29 +64,31 @@ class MathItemMapper {
             }
         }
         
-        let question = "\(numbersFront.joined())\(mathSymbol)\(numbersEnd.joined())"
+        var question = "\(numbersFront.joined())\(mathSymbol)\(numbersEnd.joined())"
         var answer = ""
+
+        if let firstNumbers = Double(numbersFront.joined()),
+            let secondNumbers = Double(numbersEnd.joined()) {
+            question = "\(firstNumbers)\(mathSymbol)\(secondNumbers)"
+        } else {
+            throw MathTextExtractor.Error.invalidData
+        }
         
         if question.isEmpty {
             throw MathTextExtractor.Error.invalidData
         }
         
-        if question.contains(".") {
+        if !mathSymbol.isEmpty {
             let expn = NSExpression(format: "\(numbersFront.joined())\(mathSymbol)\(numbersEnd.joined())")
             if let answerDouble = expn.expressionValue(with: nil, context: nil) as? Double {
-                answer = "\(answerDouble.clean)"
+                answer = "\(answerDouble)"
             } else {
                 throw MathTextExtractor.Error.invalidData
             }
         } else {
-            let expn = NSExpression(format: "\(numbersFront.joined()).0\(mathSymbol)\(numbersEnd.joined()).0")
-            
-            if let answerDouble = expn.expressionValue(with: nil, context: nil) as? Double {
-                answer = "\(answerDouble.clean)"
-            } else {
-                throw MathTextExtractor.Error.invalidData
-            }
+            throw MathTextExtractor.Error.invalidData
         }
+       
         
         return MathItem(id: UUID(), question: question, answer: answer)
     }
@@ -102,7 +104,6 @@ class MathItemMapper {
             return (true, "-")
         }
         if char.isMathSymbol {
-            print("SDSJ")
             return (true, "\(char)")
         }
         return (false, "\(char)")

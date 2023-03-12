@@ -8,7 +8,6 @@
 import Foundation
 
 class LocalMathItemsLoader: MathItemsLoader {
-    var store: MathItemsStore
     
     typealias Result = MathItemsLoader.Result
     
@@ -17,11 +16,7 @@ class LocalMathItemsLoader: MathItemsLoader {
         case notFound
     }
     
-    public init(store: MathItemsStore) {
-        self.store = store
-    }
-    
-    func get(completion: @escaping (Result) -> Void) {
+    func get(from store: MathItemsStore, completion: @escaping (Result) -> Void) {
         store.getAllData { [weak self] result in
             guard self != nil else { return }
             switch result {
@@ -43,7 +38,7 @@ extension LocalMathItemsLoader: MathItemCache {
         case failed
     }
     
-    func save(_ math: MathItem, completion: @escaping (MathItemCache.Result) -> Void) {
+    func save(to store: MathItemsStore, _ math: MathItem, completion: @escaping (MathItemCache.Result) -> Void) {
         store.insert(math) { [weak self] result in
             guard self != nil else { return }
             

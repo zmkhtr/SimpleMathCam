@@ -10,5 +10,5 @@ import Foundation
 public protocol MathItemCache {
     typealias Result = Swift.Result<Void, Error>
     
-    func save(_ math: MathItem, completion: @escaping (Result) -> Void)
+    func save(to store: MathItemsStore, _ math: MathItem, completion: @escaping (Result) -> Void)
 }

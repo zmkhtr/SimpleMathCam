@@ -14,8 +14,7 @@ class MainViewController: UIViewController, UINavigationControllerDelegate {
     @IBOutlet weak var buttonFileStorage: UIButton!
     @IBOutlet weak var buttonDatabaseStorage: UIButton!
     
-    private var imagePicker = UIImagePickerController()
-
+    private var items: [MathItem] = []
     private var viewModel: MainViewModel?
     private var onAddButtonPress: (() -> Void)?
 
@@ -33,7 +32,6 @@ class MainViewController: UIViewController, UINavigationControllerDelegate {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
 
-        setupImagePicker()
         setupAddButton()
         bindViewModel()
     }
@@ -41,24 +39,30 @@ class MainViewController: UIViewController, UINavigationControllerDelegate {
     private func bindViewModel() {
         viewModel?.load()
         
-        viewModel?.onMathItemsLoad = { items in
-            
+        viewModel?.onMathItemsLoad = { [weak self] items in
+            guard let self = self else { return }
+            print("Items \(items.count)")
+            self.items = items
+            self.tableView.reloadData()
         }
         
         viewModel?.onErrorStateChange = { error in
-            
+            print("onErrorStateChange \(error)")
         }
         
         viewModel?.onLoadingStateChange = { isLoading in
-            
+            print("onLoadingStateChange \(isLoading)")
+
         }
         
         viewModel?.onErrorRecognizeStateChange = { error in
-            
+            print("onErrorRecognizeStateChange \(error)")
+
         }
         
         viewModel?.onLoadingRecognizeStateChange = { isLoading in
-            
+            print("onLoadingRecognizeStateChange \(isLoading)")
+
         }
     }
     
@@ -69,7 +73,6 @@ class MainViewController: UIViewController, UINavigationControllerDelegate {
     }
     
     @objc func addButtonAction(tapGestureRecognizer: UITapGestureRecognizer) {
-//        openCamera()
         onAddButtonPress?()
     }
     
@@ -88,68 +91,24 @@ class MainViewController: UIViewController, UINavigationControllerDelegate {
         buttonDatabaseStorage.setImage(selectedImage, for: .normal)
         viewModel?.changeDatabase(toFileStorage: false)
     }
-   
-    private func setupImagePicker() {
-        imagePicker.delegate = self
-        imagePicker.sourceType = .photoLibrary
-        imagePicker.allowsEditing = true
-    }
-
-    func openPhotoLibrary() {
-      imagePicker.sourceType = .photoLibrary
-      present(imagePicker, animated: true)
-    }
-
-    func openCamera() {
-      guard
-        UIImagePickerController.isCameraDeviceAvailable(.front)
-          || UIImagePickerController
-            .isCameraDeviceAvailable(.rear)
-      else {
-        return
-      }
-      imagePicker.sourceType = .camera
-      present(imagePicker, animated: true)
-    }
-}
-
-extension MainViewController: UIImagePickerControllerDelegate {
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        let info = convertFromUIImagePickerControllerInfoKeyDictionary(info)
-
-        if let pickedImage =
-          info[
-            convertFromUIImagePickerControllerInfoKey(UIImagePickerController.InfoKey.editedImage)]
-          as? UIImage
-        {
-//          updateImageView(with: pickedImage)
-//            viewModel.detect(pickedImage)
-        }
-        dismiss(animated: true)
-    }
     
-    private func convertFromUIImagePickerControllerInfoKeyDictionary(
-      _ input: [UIImagePickerController.InfoKey: Any]
-    ) -> [String: Any] {
-      return Dictionary(uniqueKeysWithValues: input.map { key, value in (key.rawValue, value) })
+    func processImage(image: UIImage) {
+        viewModel?.recognize(image: image)
     }
-    
-    private func convertFromUIImagePickerControllerInfoKey(_ input: UIImagePickerController.InfoKey)
-      -> String
-    {
-      return input.rawValue
-    }
-
 }
 
 extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return items.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MathCell", for: indexPath) as! MathCell
+        let item = items[indexPath.row]
+        cell.labelQuestion.text = "Question: \(item.question)"
+        cell.labelAnswer.text = "Answer: \(item.answer)"
+        return cell
     }
     
     

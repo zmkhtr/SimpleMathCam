@@ -66,7 +66,6 @@ public class CodableMathItemsStore: MathItemsStore {
     }
     
     public func insert(_ math: MathItem, completion: @escaping (MathItemsStore.InsertionResult) -> Void) {
-        let storeURL = self.storeURL
         self.getAllData { [weak self] result in
             guard let self = self else { return }
             switch result {

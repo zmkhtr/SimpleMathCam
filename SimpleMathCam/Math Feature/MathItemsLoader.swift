@@ -10,5 +10,5 @@ import Foundation
 protocol MathItemsLoader {
     typealias Result = Swift.Result<[MathItem], Error>
     
-    func get(completion: @escaping (Result) -> Void)
+    func get(from store: MathItemsStore, completion: @escaping (Result) -> Void)
 }

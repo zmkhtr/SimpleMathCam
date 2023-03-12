@@ -10,14 +10,21 @@ import UIKit
 class MainViewModel {
     typealias Observer<T> = (T) -> Void
     
-    private let loader: LocalMathItemsLoader
+    private var loader: MathItemsLoader
+    private let cache: MathItemCache
     private let recognizer: MyMathTextExtractor
-    
     private let fileStore: MathItemsStore
     private let databaseStore: MathItemsStore
     
-    public init(loader: LocalMathItemsLoader, recognizer: MyMathTextExtractor, fileStore: MathItemsStore, databaseStore: MathItemsStore) {
-        self.loader = loader
+    private var toFileStorage: Bool = true  
+    
+    public init(loader: MathItemsLoader,
+                cache: MathItemCache,
+                recognizer: MyMathTextExtractor,
+                fileStore: MathItemsStore,
+                databaseStore: MathItemsStore) {
+        self.loader = loader 
+        self.cache = cache
         self.recognizer = recognizer
         self.fileStore = fileStore
         self.databaseStore = databaseStore
@@ -38,6 +45,19 @@ class MainViewModel {
             self.onLoadingRecognizeStateChange?(false)
 
             switch result {
+            case let .success(math):
+                self.save(math: math)
+            case let .failure(error):
+                self.onErrorRecognizeStateChange?(error.localizedDescription)
+            }
+        }
+    }
+    
+    private func save(math: MathItem) {
+        let store = toFileStorage ? fileStore : databaseStore
+        self.cache.save(to: store, math) { [weak self] result in
+            guard let self = self else { return }
+            switch result {
             case .success:
                 self.load()
             case let .failure(error):
@@ -48,8 +68,9 @@ class MainViewModel {
     
     func load() {
         onLoadingStateChange?(true)
-
-        loader.get { [weak self] result in
+        
+        let store = toFileStorage ? fileStore : databaseStore
+        loader.get(from: store) { [weak self] result in
             guard let self = self else { return }
             self.onLoadingStateChange?(false)
 
@@ -64,11 +85,7 @@ class MainViewModel {
     }
     
     func changeDatabase(toFileStorage: Bool) {
-        if toFileStorage {
-            loader.store = fileStore
-        } else {
-            loader.store = databaseStore
-        }
+        self.toFileStorage = toFileStorage
         load()
     }
 }
